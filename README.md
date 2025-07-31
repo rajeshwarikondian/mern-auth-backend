@@ -58,6 +58,17 @@ server_backend/
 
 ---
 
+## 📮 API Endpoints
+
+| Method | Endpoint             | Description               | Auth Required |
+|--------|----------------------|---------------------------|---------------|
+| POST   | `/api/auth/register` | Register a new user       | ❌            |
+| POST   | `/api/auth/login`    | Login existing user       | ❌            |
+| POST   | `/api/auth/verify`   | Verify OTP                | ❌            |
+| GET    | `/api/user/profile`  | Get user profile info     | ✅ (JWT)      |
+
+---
+
 ## 🔧 Setup & Run Locally
 
 1. **Clone the repo**
@@ -77,6 +88,38 @@ JWT_SECRET=your_jwt_secret_key
 EMAIL_USER=your_email@example.com
 EMAIL_PASS=your_email_password_or_app_key
 
+
 # Start the server
 npm start
+
+🧪 Testing with Postman
+🔐 Register
+## POST /api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Rajeshwari",
+  "email": "user@example.com",
+  "password": "SecurePass123"
+}
+
+✅ Login
+http
+Copy
+Edit
+POST /api/auth/login
+
+📧 OTP Verification
+http
+Copy
+Edit
+POST /api/auth/verify
+
+🛡️ Security Notes
+Passwords are encrypted using bcryptjs.
+JWT tokens are used for session management and route protection.
+OTP verification is done via secure email using Nodemailer.
+🛡️ This project uses hashed passwords and JWT for secure authentication.
+📧 OTP-based verification is included using Nodemailer for email confirmation.
+
 
