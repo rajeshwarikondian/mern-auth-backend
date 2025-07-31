@@ -4,13 +4,14 @@ export const getUserData = async (req, res) => {
   try {
     // console.log("req.body----->",req.body)
     // console.log("req---------->",req)
-
     //  const {userId} = req.body;
-    const userId = req.userId; // comes form middleware
     // const userId = req.params.userId;
-    console.log("userId----------->", userId);
 
+    const userId = req.userId; // comes form middleware
+    console.log("userId----------->", userId);
     const user = await userModel.findById(userId);
+    res.json({success:true,userData:user})
+
     if (!user) {
       return res.json({ success: false, message: "User Not Found" });
     }

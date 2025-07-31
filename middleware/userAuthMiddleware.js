@@ -1,9 +1,12 @@
 import jwt from "jsonwebtoken";
 
 const userAuthMiddleware = async (req, res, next) => {
-  const { token } = req.cookies;
+  next();
+
+  const { token } = req.cookies.token;
   if (!token) {
-    return res.status(401).json({    // 401 for unauthorized
+    return res.status(401).json({
+      // 401 for unauthorized
       success: false,
       message: "Not Authorized, Please Login Again",
     });
