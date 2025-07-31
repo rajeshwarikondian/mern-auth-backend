@@ -70,3 +70,13 @@ npm install
 
 # Create .env file
 cp .env.example .env
+
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+EMAIL_USER=your_email@example.com
+EMAIL_PASS=your_email_password_or_app_key
+
+# Start the server
+npm start
+
