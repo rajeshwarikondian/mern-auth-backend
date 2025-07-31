@@ -22,9 +22,9 @@ app.use(cors({ origin: allowedOrigins, credentials: true }));
 
 
 //API endpoints
-app.get("/",(req,res)=>{
-    res.send("API IS WORKING")
-})
+app.get("/", (req, res) => {
+  res.send("MERN Auth Backend is Live 🚀");
+});
 app.use("/api/auth", authRouter);
 app.use("/api/user",userRouter)
 
