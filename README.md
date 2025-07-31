@@ -122,4 +122,13 @@ OTP verification is done via secure email using Nodemailer.
 🛡️ This project uses hashed passwords and JWT for secure authentication.
 📧 OTP-based verification is included using Nodemailer for email confirmation.
 
+## 🛡️ License
+This project is licensed under the [MIT License](LICENSE).
 
+## 🙋‍♀️ Author
+**Rajeshwari Kondian**  
+💼 MERN Stack Developer  
+📬 [LinkedIn](https://www.linkedin.com/in/rajeshwari-k-g-917414209/)
+
+🙏 Acknowledgements
+Special thanks to the open-source community and contributors to libraries like Express, Mongoose, and Nodemailer.
