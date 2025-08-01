@@ -4,18 +4,17 @@ export const getUserData = async (req, res) => {
   try {
     // console.log("req.body----->",req.body)
     // console.log("req---------->",req)
+
     //  const {userId} = req.body;
-    // const userId = req.params.userId;
-
     const userId = req.userId; // comes form middleware
+    // const userId = req.params.userId;
     console.log("userId----------->", userId);
-    const user = await userModel.findById(userId);
-    res.json({success:true,userData:user})
 
+    const user = await userModel.findById(userId);
     if (!user) {
-      return res.json({ success: false, message: "User Not Found" });
+      return res.status(404).json({ success: false, message: "User Not Found" });
     }
-    res.json({
+    res.status(200).json({
       success: true,
       userData: {
         name: user.name,
@@ -23,6 +22,6 @@ export const getUserData = async (req, res) => {
       },
     });
   } catch (error) {
-    return res.json({ success: false, message: error.message });
+    return res.status(500).json({ success: false, message: error.message });
   }
 };

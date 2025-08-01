@@ -9,14 +9,17 @@ import userRouter from './routes/userRoutes.js';
 
 const app = express()
 const port = process.env.PORT || 4000
+
+// Connect MongoDB
 connectDB();
 
+// Allow frontend origin for API access
 const allowedOrigins = ['http://localhost:5173']
 
 
 // middleware
-app.use(express.json())
-app.use(cookieParser())
+app.use(express.json());
+app.use(cookieParser());
 app.use(cors({ origin:allowedOrigins, 
 credentials: true }));
 
