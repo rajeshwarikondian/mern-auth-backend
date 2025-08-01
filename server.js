@@ -14,7 +14,9 @@ const port = process.env.PORT || 4000
 connectDB();
 
 // Allow frontend origin for API access
-const allowedOrigins = ['http://localhost:5173']
+const allowedOrigins = ['http://localhost:5173',
+  "https://mern-auth-frontend-five-chi.vercel.app/"
+]
 
 
 // middleware
